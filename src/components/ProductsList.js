@@ -2,7 +2,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import ProductComponent from './ProductComponent'
 import axios from 'axios'
 import { useEffect } from 'react'
-import { setProducts, fetchProducts } from '../redux/actions/productActions'
+import { setProducts } from '../redux/actions/productActions'
+import { fetchProducts } from '../redux/sagas/postSaga'
 
 const ProductsList = () => {
   const products = useSelector((state) => state)
