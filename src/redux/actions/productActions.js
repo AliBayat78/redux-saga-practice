@@ -21,10 +21,10 @@ export const removeSelectedProduct = () => {
   }
 }
 
-// export const fetchProducts = () => async (dispatch) => {
-//   const { data } = await fakeStoreApi.get('/products')
-//   dispatch({ type: ActionTypes.FETCH_PRODUCTS, payload: data })
-// }
+export const fetchProducts = () => async (dispatch) => {
+  const { data } = await fakeStoreApi.get('/products')
+  dispatch({ type: ActionTypes.FETCH_PRODUCTS, payload: data })
+}
 
 export const fetchProduct = (id) => async (dispatch) => {
   const { data } = await fakeStoreApi.get(`/products/${id}`)

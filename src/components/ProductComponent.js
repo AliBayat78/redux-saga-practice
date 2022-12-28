@@ -2,7 +2,6 @@ import { useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 
 const ProductComponent = () => {
-  // k
   const products = useSelector((state) => state.allProducts.Products)
   const params = useParams()
   const renderList = products.map((product) => {

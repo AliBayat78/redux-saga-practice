@@ -3,11 +3,14 @@ import { ActionTypes } from '../types/action-types'
 import { setProducts } from '../actions/productActions'
 import fakeStoreApi from '../../apis/fakeStoreApi'
 
+const getProducts = async () => {
+  return await fakeStoreApi.get('/products')
+}
+
 //worker saga
-export async function* fetchProducts() {
+export function* fetchProducts() {
   try {
-    const { data } = await fakeStoreApi.get('/products')
-    yield call(data)
+    const { data } = yield call(getProducts)
     yield put(setProducts(data))
   } catch (error) {
     console.log(error)
